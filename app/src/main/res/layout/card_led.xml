@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_led_1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="20dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_led_2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="20dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_led_3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="20dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_led_4"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="20dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_led_5"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="20dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_led_6"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="20dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_led_7"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="20dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_led_8"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="20dp"/>
+
+</LinearLayout>
