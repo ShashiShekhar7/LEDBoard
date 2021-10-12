@@ -33,19 +33,46 @@ class MainActivity : AppCompatActivity() {
         val button : Button = findViewById(R.id.btn_next)
 
         var index = 0
+        var start = false
 
         button.setOnClickListener{
-            val model = LedStateModel("1", "1", "1", "1", "1", "1",
-                "1", "1")
+            Thread(Runnable {
+                start = !start
 
-            update(recyclerView, data, model, index)
+                while (start) {
 
-            if (index == 7)
-                index = 0
-            else
-                index++
+                    var model = LedStateModel("1", "1", "1", "1", "1", "1", "1", "1")
+
+                    when(index) {
+                        0 -> model = LedStateModel("1", "1", "1", "1", "1", "1",
+                            "1", "1")
+                        1 -> model = LedStateModel("1", "0", "0", "0", "0", "0",
+                            "0", "1")
+                        2 -> model = LedStateModel("1", "0", "0", "0", "0", "0",
+                            "0", "1")
+                        3 -> model = LedStateModel("1", "0", "0", "0", "0", "0",
+                            "0", "1")
+                        4 -> model = LedStateModel("1", "1", "1", "1", "1", "1",
+                            "1", "1")
+                        5 -> model = LedStateModel("1", "0", "0", "0", "0", "0",
+                            "0", "1")
+                        6 -> model = LedStateModel("1", "0", "0", "0", "0", "0",
+                            "0", "1")
+                        7 -> model = LedStateModel("1", "0", "0", "0", "0", "0",
+                            "0", "1")
+                    }
+
+                    runOnUiThread{ update(recyclerView, data, model, index) }
+                    Thread.sleep(20)
+
+                    if (index == 7)
+                        index = 0
+                    else
+                        index++
+
+                }
+            }).start()
         }
-
     }
 
     fun update(recyclerView: RecyclerView, data : ArrayList<LedStateModel>, item: LedStateModel, index: Int) {
@@ -59,13 +86,14 @@ class MainActivity : AppCompatActivity() {
             index - 1
         }
 
-        Log.d(TAG, "update: previousIndex : $previousIndex")
-        Log.d(TAG, "update: index : $index")
-        Log.d(TAG, "update: list size : ${data.size}")
-
         data[previousIndex] = modelReset
         data[index] = item
-        Log.d(TAG, "update: list size : ${data.size}")
+
+//        Log.d(TAG, "update: previousIndex $previousIndex")
+//        Log.d(TAG, "update: index $index")
+
+//        recyclerView.adapter?.notifyDataSetChanged()
+
         recyclerView.adapter?.notifyItemChanged(previousIndex)
         recyclerView.adapter?.notifyItemChanged(index)
 
