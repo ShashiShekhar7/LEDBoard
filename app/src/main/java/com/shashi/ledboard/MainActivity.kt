@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun update(recyclerView: RecyclerView, data : ArrayList<LedStateModel>, item: LedStateModel, index: Int) {
+    private fun update(recyclerView: RecyclerView, data : ArrayList<LedStateModel>, item: LedStateModel, index: Int) {
 
         val modelReset = LedStateModel("0", "0", "0", "0", "0", "0",
             "0", "0")
