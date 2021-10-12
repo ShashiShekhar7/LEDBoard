@@ -1,17 +1,13 @@
 package com.shashi.ledboard
 
 import android.graphics.Color
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import kotlin.math.log
 
 class DisplayAdapter(private val mList : List<LedStateModel>) : RecyclerView.Adapter<DisplayAdapter.ViewHolder>() {
-
-    private val TAG = "DisplayAdapter"
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.card_led, parent, false)

@@ -2,14 +2,11 @@ package com.shashi.ledboard
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
-
-    private val TAG = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,33 +33,49 @@ class MainActivity : AppCompatActivity() {
         var start = false
 
         button.setOnClickListener{
-            Thread(Runnable {
+            Thread {
                 start = !start
 
                 while (start) {
 
                     var model = LedStateModel("1", "1", "1", "1", "1", "1", "1", "1")
 
-                    when(index) {
-                        0 -> model = LedStateModel("1", "1", "1", "1", "1", "1",
-                            "1", "1")
-                        1 -> model = LedStateModel("1", "0", "0", "0", "0", "0",
-                            "0", "1")
-                        2 -> model = LedStateModel("1", "0", "0", "0", "0", "0",
-                            "0", "1")
-                        3 -> model = LedStateModel("1", "0", "0", "0", "0", "0",
-                            "0", "1")
-                        4 -> model = LedStateModel("1", "1", "1", "1", "1", "1",
-                            "1", "1")
-                        5 -> model = LedStateModel("1", "0", "0", "0", "0", "0",
-                            "0", "1")
-                        6 -> model = LedStateModel("1", "0", "0", "0", "0", "0",
-                            "0", "1")
-                        7 -> model = LedStateModel("1", "0", "0", "0", "0", "0",
-                            "0", "1")
+                    when (index) {
+                        0 -> model = LedStateModel(
+                            "1", "1", "1", "1", "1", "1",
+                            "1", "1"
+                        )
+                        1 -> model = LedStateModel(
+                            "1", "0", "0", "0", "0", "0",
+                            "0", "1"
+                        )
+                        2 -> model = LedStateModel(
+                            "1", "0", "0", "0", "0", "0",
+                            "0", "1"
+                        )
+                        3 -> model = LedStateModel(
+                            "1", "0", "0", "0", "0", "0",
+                            "0", "1"
+                        )
+                        4 -> model = LedStateModel(
+                            "1", "1", "1", "1", "1", "1",
+                            "1", "1"
+                        )
+                        5 -> model = LedStateModel(
+                            "1", "0", "0", "0", "0", "0",
+                            "0", "1"
+                        )
+                        6 -> model = LedStateModel(
+                            "1", "0", "0", "0", "0", "0",
+                            "0", "1"
+                        )
+                        7 -> model = LedStateModel(
+                            "1", "0", "0", "0", "0", "0",
+                            "0", "1"
+                        )
                     }
 
-                    runOnUiThread{ update(recyclerView, data, model, index) }
+                    runOnUiThread { update(recyclerView, data, model, index) }
                     Thread.sleep(20)
 
                     if (index == 7)
@@ -71,7 +84,7 @@ class MainActivity : AppCompatActivity() {
                         index++
 
                 }
-            }).start()
+            }.start()
         }
     }
 
